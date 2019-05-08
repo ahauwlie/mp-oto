@@ -8,6 +8,8 @@
         <link rel="stylesheet" type="text/css" href="../styles/style.css">
         <link rel="stylesheet" type="text/css" href="../fonts/css/fontawesome-all.min.css">
         <link rel="stylesheet" type="text/css" href="../styles/framework.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
     </head>
 <body>
     <div id="page-transitions" class="page-build highlight-red">
@@ -147,7 +149,13 @@
                         <a onclick="loadmore()" class="button button-s button-center-medium bg-highlight ultrabold uppercase button-round">Load More</a>
                     </div>
                     <div class="tab-item" id="news-tab-2">
-                        
+                        <div class="slider slider-for">
+                            <div id="slide1"></div>
+                            <div id="slide2"></div>
+                            <div id="slide3"></div>
+                            <div id="slide4"></div>
+                            <div id="slide5"></div>
+                        </div>
                     </div>
                     <div class="tab-item" id="news-tab-3">
                         <div id="mydivcard"></div>
@@ -371,5 +379,119 @@
     </script>
     <script type="text/javascript" src="../scripts/beritavideo.js"></script>
     <script type="text/javascript" src="../scripts/beritafoto.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js'></script>
+    <script type="text/javascript">
+         $('.slider-for').slick({
+           slidesToShow: 1,
+           slidesToScroll: 1,
+           arrows: false,
+           fade: true,
+           asNavFor: '.slider-nav'
+         });
+    </script>
+    <script type="text/javascript">
+        $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
+
+                var test1 = data.data[0].cover, replacement = '_360x685.';
+                var string1 = test1.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[0].cvr1 = string1;
+
+                var coverslide = data.data[0].cvr1;
+                var id = data.data[0].id;
+                var title = data.data[0].title;
+                var uhuy =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id+`" class="news-slide-1">
+                            <img src="`+coverslide+`" data-src-retina="`+coverslide+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30">`+title+`</h1>
+                                <em class="bg-highlight">`+id+`</em>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide1').append(uhuy);
+
+                var test2 = data.data[1].cover, replacement = '_360x685.';
+                var string2 = test2.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[1].cvr2 = string2;
+
+                var coverslide1 = data.data[1].cvr2;
+                var id1 = data.data[1].id;
+                var title1 = data.data[1].title;
+                var uhuy1 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id1+`" class="news-slide-1">
+                            <img src="`+coverslide1+`" data-src-retina="`+coverslide1+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30">`+title1+`</h1>
+                                <em class="bg-highlight">`+id1+`</em>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide2').append(uhuy1);
+
+                var test3 = data.data[2].cover, replacement = '_360x685.';
+                var string3 = test3.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[2].cvr3 = string3;
+
+                var coverslide2 = data.data[2].cvr3;
+                var id2 = data.data[2].id;
+                var title2 = data.data[2].title;
+                var uhuy2 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id2+`" class="news-slide-1">
+                            <img src="`+coverslide2+`" data-src-retina="`+coverslide2+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30">`+title2+`</h1>
+                                <em class="bg-highlight">`+id2+`</em>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide3').append(uhuy2);
+
+                var test4 = data.data[3].cover, replacement = '_360x685.';
+                var string4 = test4.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[3].cvr4 = string4;
+
+                var coverslide3 = data.data[3].cvr4;
+                var id3 = data.data[3].id;
+                var title3 = data.data[3].title;
+                var uhuy3 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id3+`" class="news-slide-1">
+                            <img src="`+coverslide3+`" data-src-retina="`+coverslide3+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30">`+title3+`</h1>
+                                <em class="bg-highlight">`+id3+`</em>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide4').append(uhuy3);
+
+                var test5 = data.data[4].cover, replacement = '_360x685.';
+                var string5 = test5.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[4].cvr5 = string5;
+
+                var coverslide4 = data.data[4].cvr5;
+                var id4 = data.data[4].id;
+                var title4 = data.data[4].title;
+                var uhuy4 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id4+`" class="news-slide-1">
+                            <img src="`+coverslide4+`" data-src-retina="`+coverslide4+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30">`+title4+`</h1>
+                                <em class="bg-highlight">`+id4+`</em>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide5').append(uhuy4);
+        });
+    </script>
 </body>
 </html>
