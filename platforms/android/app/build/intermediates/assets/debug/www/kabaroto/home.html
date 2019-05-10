@@ -159,7 +159,6 @@
                     </div>
                     <div class="tab-item" id="news-tab-3">
                         <div id="mydivcard"></div>
-                        <a onclick="loadmore()" class="button button-s button-center-medium bg-highlight ultrabold uppercase button-round">Load More</a>
                     </div>
                     <div class="tab-item" id="news-tab-4">
                         <div class="content">
@@ -225,6 +224,7 @@
     <script type="text/javascript" src="../scripts/jquery.js"></script>
     <script type="text/javascript" src="../scripts/plugins.js"></script>
     <script type="text/javascript" src="../scripts/custom.js"></script>
+    <!-- terbaru -->
     <script type="text/javascript">
         $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
                 
@@ -258,6 +258,31 @@
                 `;
 
                 $("#mydiv").append(table1);
+            }
+        });
+    </script>
+    <!-- terpopuler -->
+    <script type="text/javascript">
+        $.getJSON('https://adm982.kabaroto.com/api/post?category=14/?page=1&rpp=20', function(data) {
+                
+            for (var i = 0; i < data.data.length; i++) {
+                var my = data.data[i].cover,
+                replacement = '_160x160.';
+                var str = my.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[i].coverlite = str;
+                var my1 = data.data[i].cover,
+                replacement = '_318x150.';
+                var str1 = my1.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[i].coverlite1 = str1;
+
+                var category = data.data[i].id;
+                var cover = data.data[i].coverlite;
+                var covercard = data.data[i].coverlite1;
+                var date = data.data[i].published;
+                var title = data.data[i].title;
+                var user = data.data[i].user.name;
+                var userid = data.data[i].user.id;
+                var minides = data.data[i].seo_description;
 
                 var table2 = `
                     <div class="article-card  box-shadow bg-white bottom-30">
@@ -279,11 +304,12 @@
             }
         });
     </script>
+    <!-- hot news -->
     <script type="text/javascript">
-        $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
+        $.getJSON('https://adm982.kabaroto.com/api/post?category=13/?page=1&rpp=20', function(data) {
                 
             $('#demo').html('<div class="single-slidera owl-carousel owl-no-dots" id="test"></div>');
-            for(var i=0;i<5;i++){
+            for(var i=0;i<10;i++){
                 var my2 = data.data[i].cover, replacement = '_360x240.';
                 var str2 = my2.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[i].coverlite2 = str2;
@@ -312,6 +338,7 @@
             });
         });
     </script>
+    <!-- terbaru loadmore -->
     <script type="text/javascript">
         var page = 1;
         function loadmore() {
@@ -354,25 +381,6 @@
 
                     //panggil ke <div id="mydiv">
                     $("#mydiv").append(table1);
-
-                    var table2 = `
-                        <div class="article-card  box-shadow bg-white bottom-30">
-                            <a href="nyoba_detail.html?id=`+category+`" class="article-header">
-                                <span class="article-overlay"></span>
-                                <img class="article-image preload-image" src="` + covercard + `">
-                                <span class="article-category bg-highlight color-white uppercase">` + category + `</span>
-                                <span class="article-author color-gray-light"><i class="fa fa-user opacity-50"></i>`+user+`</span>
-                                <span class="article-time color-gray-light">` + date + `<i class="fas fa-clock opacity-50"></i></span>
-                            </a>
-                            <div class="article-content">
-                                <h1 class="article-title top-15 bottom-15">` + title + `</h1>
-                                <p class="bottom-15">` + minides + `</p>
-                            </div>
-                        </div>
-                    `;
-
-                    //panggil ke <div id="mydiv">
-                    $("#mydivcard").append(table2);
                 };
             });
         }
@@ -392,7 +400,7 @@
     <script type="text/javascript">
         $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
 
-                var test1 = data.data[0].cover, replacement = '_360x685.';
+                var test1 = data.data[0].cover, replacement = '_360x585.';
                 var string1 = test1.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[0].cvr1 = string1;
 
@@ -404,15 +412,14 @@
                         <a href="nyoba_detail.html?id=`+id+`" class="news-slide-1">
                             <img src="`+coverslide+`" data-src-retina="`+coverslide+`" alt="">
                             <div class="cover-content cover-content-bottom">
-                                <h1 class="color-white left-text uppercase bold top-30">`+title+`</h1>
-                                <em class="bg-highlight">`+id+`</em>
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title+`</h1>
                             </div>
                         </a>
                     </div>
                 `;
                 $('#slide1').append(uhuy);
 
-                var test2 = data.data[1].cover, replacement = '_360x685.';
+                var test2 = data.data[1].cover, replacement = '_360x585.';
                 var string2 = test2.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[1].cvr2 = string2;
 
@@ -424,15 +431,14 @@
                         <a href="nyoba_detail.html?id=`+id1+`" class="news-slide-1">
                             <img src="`+coverslide1+`" data-src-retina="`+coverslide1+`" alt="">
                             <div class="cover-content cover-content-bottom">
-                                <h1 class="color-white left-text uppercase bold top-30">`+title1+`</h1>
-                                <em class="bg-highlight">`+id1+`</em>
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title1+`</h1>
                             </div>
                         </a>
                     </div>
                 `;
                 $('#slide2').append(uhuy1);
 
-                var test3 = data.data[2].cover, replacement = '_360x685.';
+                var test3 = data.data[2].cover, replacement = '_360x585.';
                 var string3 = test3.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[2].cvr3 = string3;
 
@@ -444,15 +450,14 @@
                         <a href="nyoba_detail.html?id=`+id2+`" class="news-slide-1">
                             <img src="`+coverslide2+`" data-src-retina="`+coverslide2+`" alt="">
                             <div class="cover-content cover-content-bottom">
-                                <h1 class="color-white left-text uppercase bold top-30">`+title2+`</h1>
-                                <em class="bg-highlight">`+id2+`</em>
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title2+`</h1>
                             </div>
                         </a>
                     </div>
                 `;
                 $('#slide3').append(uhuy2);
 
-                var test4 = data.data[3].cover, replacement = '_360x685.';
+                var test4 = data.data[3].cover, replacement = '_360x585.';
                 var string4 = test4.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[3].cvr4 = string4;
 
@@ -464,15 +469,14 @@
                         <a href="nyoba_detail.html?id=`+id3+`" class="news-slide-1">
                             <img src="`+coverslide3+`" data-src-retina="`+coverslide3+`" alt="">
                             <div class="cover-content cover-content-bottom">
-                                <h1 class="color-white left-text uppercase bold top-30">`+title3+`</h1>
-                                <em class="bg-highlight">`+id3+`</em>
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title3+`</h1>
                             </div>
                         </a>
                     </div>
                 `;
                 $('#slide4').append(uhuy3);
 
-                var test5 = data.data[4].cover, replacement = '_360x685.';
+                var test5 = data.data[4].cover, replacement = '_360x585.';
                 var string5 = test5.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[4].cvr5 = string5;
 
@@ -484,8 +488,7 @@
                         <a href="nyoba_detail.html?id=`+id4+`" class="news-slide-1">
                             <img src="`+coverslide4+`" data-src-retina="`+coverslide4+`" alt="">
                             <div class="cover-content cover-content-bottom">
-                                <h1 class="color-white left-text uppercase bold top-30">`+title4+`</h1>
-                                <em class="bg-highlight">`+id4+`</em>
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title4+`</h1>
                             </div>
                         </a>
                     </div>

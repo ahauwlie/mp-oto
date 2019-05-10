@@ -309,7 +309,7 @@
         $.getJSON('https://adm982.kabaroto.com/api/post?category=13/?page=1&rpp=20', function(data) {
                 
             $('#demo').html('<div class="single-slidera owl-carousel owl-no-dots" id="test"></div>');
-            for(var i=0;i<10;i++){
+            for(var i=0;i<5;i++){
                 var my2 = data.data[i].cover, replacement = '_360x240.';
                 var str2 = my2.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[i].coverlite2 = str2;
