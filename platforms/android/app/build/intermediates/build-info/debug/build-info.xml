@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1556262606867"
+    timestamp="1557458767850"
     token="-4015487930798980476"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -18,10 +18,10 @@
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="3269" />
     <task
         name="verifier"
-        duration="0" />
+        duration="2196" />
 
     <artifact
         location="D:\ka_baroto\phonegap project\mp-oto\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1556262606867"
+        timestamp="1557458767850"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\ka_baroto\phonegap project\mp-oto\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
