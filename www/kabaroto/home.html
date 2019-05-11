@@ -564,7 +564,7 @@
     <script type="text/javascript">
         $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
 
-                var test1 = data.data[0].cover, replacement = '_360x585.';
+                var test1 = data.data[0].cover, replacement = '_360x485.';
                 var string1 = test1.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[0].cvr1 = string1;
 
@@ -583,7 +583,7 @@
                 `;
                 $('#slide1').append(uhuy);
 
-                var test2 = data.data[1].cover, replacement = '_360x585.';
+                var test2 = data.data[1].cover, replacement = '_360x485.';
                 var string2 = test2.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[1].cvr2 = string2;
 
@@ -602,7 +602,7 @@
                 `;
                 $('#slide2').append(uhuy1);
 
-                var test3 = data.data[2].cover, replacement = '_360x585.';
+                var test3 = data.data[2].cover, replacement = '_360x485.';
                 var string3 = test3.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[2].cvr3 = string3;
 
@@ -621,7 +621,7 @@
                 `;
                 $('#slide3').append(uhuy2);
 
-                var test4 = data.data[3].cover, replacement = '_360x585.';
+                var test4 = data.data[3].cover, replacement = '_360x485.';
                 var string4 = test4.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[3].cvr4 = string4;
 
@@ -640,7 +640,7 @@
                 `;
                 $('#slide4').append(uhuy3);
 
-                var test5 = data.data[4].cover, replacement = '_360x585.';
+                var test5 = data.data[4].cover, replacement = '_360x485.';
                 var string5 = test5.replace(/.([^.]*)$/, replacement + '$1');
                 data.data[4].cvr5 = string5;
 
