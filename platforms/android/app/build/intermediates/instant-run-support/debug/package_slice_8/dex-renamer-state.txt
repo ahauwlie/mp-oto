@@ -1,4 +1,4 @@
-#Fri May 10 11:39:08 ICT 2019
-base.0=D\:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\28
+#Sun May 12 16:16:02 ICT 2019
+base.0=D\:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\47
 path.0=classes.dex
 renamed.0=classes.dex
