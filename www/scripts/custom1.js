@@ -1077,10 +1077,10 @@ $(document).ready(function () {
 		});
 		// var share_link = window.location.href;
 		var linkgue = window.location.href;
-		var id = linkgue.substr(-5);
-		$.getJSON('https://adm982.kabaroto.com/api/post/' + id, function(data) {
+		var id = linkgue.substr(-4);
+		$.getJSON('https://admdev982.side.id/api/post/' + id, function(data) {
 			var page = data.data.page;
-			var share_link = "https://kabaroto.com" + page;
+			var share_link = "https://www.side.id/dn/" + page;
 			$('.shareToFacebook').prop("href", "https://www.facebook.com/sharer/sharer.php?u=" + share_link)
 			$('.shareToGooglePlus').prop("href", "https://plus.google.com/share?url=" + share_link)
 			$('.shareToTwitter').prop("href", "https://twitter.com/home?status=" + share_link)
