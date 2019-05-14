@@ -1075,13 +1075,19 @@ $(document).ready(function () {
 			$(this).hide();
 			$(this).parent().parent().find('.read-more-box').show();
 		});
-		var share_link = window.location.href;
-		$('.shareToFacebook').prop("href", "https://www.facebook.com/sharer/sharer.php?u=" + share_link)
-		$('.shareToGooglePlus').prop("href", "https://plus.google.com/share?url=" + share_link)
-		$('.shareToTwitter').prop("href", "https://twitter.com/home?status=" + share_link)
-		$('.shareToPinterest').prop("href", "https://pinterest.com/pin/create/button/?url=" + share_link)
-		$('.shareToWhatsApp').prop("href", "whatsapp://send?text=" + share_link)
-		$('.shareToMail').prop("href", "mailto:?body=" + share_link)
+		// var share_link = window.location.href;
+		var linkgue = window.location.href;
+		var id = linkgue.substr(-5);
+		$.getJSON('https://adm982.kabaroto.com/api/post/' + id, function(data) {
+			var page = data.data.page;
+			var share_link = "https://kabaroto.com" + page;
+			$('.shareToFacebook').prop("href", "https://www.facebook.com/sharer/sharer.php?u=" + share_link)
+			$('.shareToGooglePlus').prop("href", "https://plus.google.com/share?url=" + share_link)
+			$('.shareToTwitter').prop("href", "https://twitter.com/home?status=" + share_link)
+			$('.shareToPinterest').prop("href", "https://pinterest.com/pin/create/button/?url=" + share_link)
+			$('.shareToWhatsApp').prop("href", "whatsapp://send?text=" + share_link)
+			$('.shareToMail').prop("href", "mailto:?body=" + share_link)
+		});
 	}
 	setTimeout(init_template, 0);
 	// $(function () {
