@@ -33,6 +33,17 @@
               animation: spin 2s linear infinite;
             }
 
+            .loader2 {
+              border: 8px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 8px solid #A80000;
+              margin: auto;
+              width: 50px;
+              height: 50px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+            }
+
             /* Safari */
             @-webkit-keyframes spin {
               0% { -webkit-transform: rotate(0deg); }
@@ -425,7 +436,6 @@
     <script type="text/javascript" src="../scripts/custom.js"></script>
     <!-- terbaru -->
     <script type="text/javascript">
-        $(".loader").show();
         $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {            
             for (var i = 0; i < data.data.length; i++) {
                 var my = data.data[i].cover,
@@ -571,6 +581,7 @@
 
                     // buat UI yang di tampilin ke html
                     var table1 = `
+                        <div class="loader2"></div>
                         <div class="news-list-item no-border bottom-0">
                             <a href="nyoba_detail.html?id=`+category+`">
                                 <img src="` + cover + `">
@@ -583,6 +594,7 @@
                     //panggil ke <div id="mydiv">
                     $("#mydiv").append(table1);
                 };
+                $(".loader2").hide();
             });
         }
     </script>
