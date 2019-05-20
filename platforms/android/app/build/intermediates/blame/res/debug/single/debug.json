@@ -12,12 +12,12 @@
         "source": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\src\\main\\res\\mipmap-mdpi\\icon.png"
     },
     {
-        "merged": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxxhdpi_screen.png.flat",
-        "source": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxxhdpi\\screen.png"
-    },
-    {
         "merged": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxhdpi_screen.png.flat",
         "source": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
+    },
+    {
+        "merged": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-land-xxxhdpi_screen.png.flat",
+        "source": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxxhdpi\\screen.png"
     },
     {
         "merged": "D:\\ka_baroto\\phonegap project\\mp-oto\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_icon.png.flat",

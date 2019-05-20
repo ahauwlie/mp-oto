@@ -1084,7 +1084,7 @@ $(document).ready(function () {
 			$('.shareToFacebook').prop("href", "https://www.facebook.com/sharer/sharer.php?u=" + share_link)
 			$('.shareToGooglePlus').prop("href", "https://plus.google.com/share?url=" + share_link)
 			$('.shareToTwitter').prop("href", "https://twitter.com/home?status=" + share_link)
-			$('.shareToPinterest').prop("href", "https://pinterest.com/pin/create/button/?url=" + share_link)
+			$('.shareToLine').prop("href", "line://msg/text/?" + share_link)
 			$('.shareToWhatsApp').prop("href", "whatsapp://send?text=" + share_link)
 			$('.shareToMail').prop("href", "mailto:?body=" + share_link)
 		});

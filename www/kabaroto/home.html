@@ -10,6 +10,40 @@
         <link rel="stylesheet" type="text/css" href="../styles/framework.css">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
+        <style>
+            .loader {
+              border: 8px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 8px solid #A80000;
+              margin: auto;
+              width: 50px;
+              height: 50px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+            }
+
+            .loader1 {
+              border: 8px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 8px solid #A80000;
+              margin: auto;
+              width: 50px;
+              height: 50px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+            }
+
+            /* Safari */
+            @-webkit-keyframes spin {
+              0% { -webkit-transform: rotate(0deg); }
+              100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+        </style>
     </head>
 <body>
     <div id="page-transitions" class="page-build highlight-red">
@@ -140,9 +174,11 @@
                 </div>
                 <div class="news-tabs-content">
                     <div class="tab-item active-tab" id="news-tab-1">
+                        <div class="loader1"></div>
                         <div id="demo"></div>
                         <br>
                         <div class="content">
+                            <div class="loader"></div>
                             <div id="mydiv"></div>
                         </div>
                         <a onclick="loadmore()" class="button button-s button-center-medium bg-highlight ultrabold uppercase button-round">Load More</a>
@@ -389,8 +425,8 @@
     <script type="text/javascript" src="../scripts/custom.js"></script>
     <!-- terbaru -->
     <script type="text/javascript">
-        $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
-                
+        $(".loader").show();
+        $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {            
             for (var i = 0; i < data.data.length; i++) {
                 var my = data.data[i].cover,
                 replacement = '_160x160.';
@@ -422,6 +458,7 @@
 
                 $("#mydiv").append(table1);
             }
+            $(".loader").hide();
         });
     </script>
     <!-- terpopuler -->
@@ -499,6 +536,7 @@
                 autoplay: true,
                 autoplayTimeout: 3500
             });
+            $(".loader1").hide();
         });
     </script>
     <!-- terbaru loadmore -->
