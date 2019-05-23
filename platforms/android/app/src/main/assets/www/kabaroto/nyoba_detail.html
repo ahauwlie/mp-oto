@@ -9,6 +9,29 @@
         <link rel="stylesheet" type="text/css" href="../styles/framework.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     </head>
+    <style>
+        .loader1 {
+          border: 8px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 8px solid #A80000;
+          margin: auto;
+          width: 50px;
+          height: 50px;
+          -webkit-animation: spin 2s linear infinite; /* Safari */
+          animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+    </style>
     <body>
         <div id="page-transitions" class="page-build highlight-red">
             
@@ -147,6 +170,7 @@
             <div class="page-content header-clear">
                 <div class="news-tabs-content">
                     <div class="tab-item active-tab">
+                        <div class="loader1"></div>
                         <div class="blog-post-home"></div>
                         <div class="content reading-time-box">
                             <a href="#" data-menu="menu-share"><i class="instagram-bg fas fa-share-alt"></i> Share This Articel</a>
@@ -383,7 +407,6 @@
         <script type="text/javascript">
             var url = window.location.href;
             var id = url.substring(url.lastIndexOf('=') + 1);
-            console.log(id)
             $.getJSON('https://adm982.kabaroto.com/api/post/' + id, function(data) {
                     
                     var my1 = data.data.cover, replacement = '_360x240.';
@@ -427,6 +450,7 @@
                     `;
 
                     $(".reading-time-box").append(table2);
+                    $(".loader1").hide();
                 });
         </script>
     </body>
