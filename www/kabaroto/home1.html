@@ -8,170 +8,131 @@
         <link rel="stylesheet" type="text/css" href="../styles/style.css">
         <link rel="stylesheet" type="text/css" href="../fonts/css/fontawesome-all.min.css">
         <link rel="stylesheet" type="text/css" href="../styles/framework.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css'>
         <style>
-            div#load_screen{
-                background: #000;
-                opacity: 1;
-                position: fixed;
-                z-index:10;
-                top: 0px;
-                width: 100%;
-                height: 1600px;
+            .loader {
+              border: 8px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 8px solid #A80000;
+              margin: auto;
+              width: 50px;
+              height: 50px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
             }
-            div#load_screen > div#loading{
-                color:#FFF;
-                width:120px;
-                height:24px;
-                margin: 300px auto;
+
+            .loader1 {
+              border: 8px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 8px solid #A80000;
+              margin: auto;
+              width: 50px;
+              height: 50px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+            }
+
+            .loader2 {
+              border: 8px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 8px solid #A80000;
+              margin: auto;
+              width: 50px;
+              height: 50px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+            }
+
+            /* Safari */
+            @-webkit-keyframes spin {
+              0% { -webkit-transform: rotate(0deg); }
+              100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+
+            #myUL {
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+            }
+
+            #myUL li{
+              border: 1px solid #ddd;
+              margin-top: -1px; /* Prevent double borders */
+              background-color: #f6f6f6;
+              padding: 12px;
+              text-decoration: none;
+              font-size: 18px;
+              color: black;
+              display: block
+            }
+
+            #myUL li:hover:not(.header) {
+              background-color: #eee;
             }
         </style>
-        <script>
-            window.addEventListener("load", function(){
-                var load_screen = document.getElementById("load_screen");
-                document.body.removeChild(load_screen);
-            });
-        </script>
     </head>
 <body>
     <div id="page-transitions" class="page-build highlight-red">
-
         <!-- header ini -->
         <div class="header header-dark header-logo-center" style="transition: all 350ms ease 0s;">
             <a href="home.html" class="header-logo"></a>
-            <a data-menu="menu-1" href="#" class="header-icon header-icon-1"><i class="fas fa-bars"></i></a>
-            <a data-menu="menu-3" href="#" class="header-icon header-icon-4"><i class="fas fa-cog"></i></a>
         </div>
-        <div id="menu-1" class="menu-sidebar menu-dark menu-sidebar-left menu-sidebar-3d">
-            <div class="menu-scroll">
-                <div class="sidebar-icons">
-                    <a href="https://www.facebook.com/enabled.labs"><i class="font-10 fa-fw fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/iEnabled"><i class="font-10 fa-fw fab fa-twitter"></i></a>
-                    <a href="tel:+1 234 567 890"><i class="font-10 fa-fw fa fa-phone"></i></a>
-                    <a href="mailto:yourname@domain.com"><i class="font-11 fa-fw far fa-envelope"></i></a>
-                    <a href="#" class="close-menu"><i class="font-10 fa-fw fa fa-times"></i></a>
-                </div>
-                <div class="sidebar-logo">
-                    <a href="#"></a>
-                    <em>Kabar Seputar Otomotif</em>
-                </div>
-                <div class="sidebar-divider"></div>
-                <div class="sidebar-separator">Navigation</div>
-                <div class="menu-items menu-icons">
-                    <a href="../index.html"><i class="fa fa-star"></i>Welcome</a>
-                    <a href="home.html"><i class="fa fa-home"></i>Homepages</a>
-                    <a href="#" data-submenu="submenu-1" class="submenu-has-numbers"><i class="fas fa-shopping-bag"></i>OtoNews</a>
-                    <div class="submenu" id="submenu-1">
-                        <a href="news_mobil.html">Mobil</a>
-                        <a href="news_motor.html">Motor</a>
-                        <a href="news_konsep.html">Konsep</a>
-                        <a href="news_event.html">Event</a>
-                        <a href="news_eksekutif.html">Esekutif</a>
-                        <a href="news_jip.html">Jip</a>
-                    </div>
-                    <a href="#" data-submenu="submenu-2" class="submenu-has-numbers"><i class="fas fa-shopping-bag"></i>OtoTips</a>
-                    <div class="submenu" id="submenu-2">
-                        <a href="tips_mobil.html">Tips Mobil</a>
-                        <a href="tips_motor.html">Tips Motor</a>
-                    </div>
-                    <a href="#" data-submenu="submenu-3" class="submenu-has-numbers"><i class="fas fa-shopping-bag"></i>OtoSport</a>
-                    <div class="submenu" id="submenu-3">
-                        <a href="sport_moto.html">Motogp</a>
-                        <a href="sport_f1.html">Formula One</a>
-                        <a href="sport_nasional.html">Nasional</a>
-                    </div>
-                    <a href="#" data-submenu="submenu-4" class="submenu-has-numbers"><i class="fas fa-shopping-bag"></i>OtoTren</a>
-                    <div class="submenu" id="submenu-4">
-                        <a href="tren_pernik.html">Pernik</a>
-                        <a href="tren_aksesori.html">Aksesori</a>
-                        <a href="tren_kombil.html">Komunitas Mobil</a>
-                        <a href="tren_komtor.html">Komunitas Motor</a>
-                    </div>
-                    <a href="#" data-submenu="submenu-5" class="submenu-has-numbers"><i class="fas fa-shopping-bag"></i>OtoModif</a>
-                    <div class="submenu" id="submenu-5">
-                        <a href="modif_mobil.html">Kustom Mobil</a>
-                        <a href="modif_motor.html">Kustom Motor</a>
-                        <a href="modif_restorasi.html">Restorasi</a>
-                        <a href="modif_bengbil.html">Bengkel Mobil</a>
-                        <a href="modif_bengtor.html">Bengkel Motor</a>
-                    </div>
-                    <a href="home.html"><i class="fa fa-home"></i>OtoBrand</a>
-                </div>
-                <div class="sidebar-divider"></div>
-            </div>
-        </div>
-        <div id="menu-3" class="menu-sidebar menu-dark menu-sidebar-right menu-sidebar-3d">
-            <div class="menu-scroll">
-                <div class="sidebar-icons">
-                    <a href="https://www.facebook.com/enabled.labs"><i class="font-10 fa-fw fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com/iEnabled"><i class="font-10 fa-fw fab fa-twitter"></i></a>
-                    <a href="tel:+1 234 567 890"><i class="font-10 fa-fw fa fa-phone"></i></a>
-                    <a href="mailto:yourname@domain.com"><i class="font-11 fa-fw far fa-envelope"></i></a>
-                    <a href="#" class="close-menu"><i class="font-10 fa-fw fa fa-times"></i></a>
-                </div>
-                <div class="sidebar-logo">
-                    <a href="#"></a>
-                    <em>Kabar Seputar Otomotif</em>
-                </div>
-                <div class="sidebar-divider"></div>
-                <div class="sidebar-separator">Highlights</div>
-                <div class="menu-items menu-icons">
-                    <a class="demo-color demo-red menu-item-active" href="#"><i class="color-red-light fa fa-dot-circle"></i>Red</a>
-                    <a class="demo-color demo-green" href="#"><i class="color-green-light fa fa-dot-circle"></i>Green</a>
-                    <a class="demo-color demo-blue" href="#"><i class="color-blue-light fa fa-dot-circle"></i>Blue</a>
-                    <a class="demo-color demo-pink" href="#"><i class="color-pink-light fa fa-dot-circle"></i>Pink</a>
-                    <a class="demo-color demo-orange" href="#"><i class="color-orange-light fa fa-dot-circle"></i>Orange</a>
-                    <a class="demo-color demo-magenta" href="#"><i class="color-magenta-light fa fa-dot-circle"></i>Magenta</a>
-                    <a class="demo-color demo-simple" href="#"><i class="color-gray-dark fa fa-dot-circle"></i>Minimalist</a>
-                </div>
-                <div class="sidebar-divider"></div>
-                <div class="sidebar-separator">Menu Settings</div>
-                <div class="menu-items menu-icons">
-                    <a class="demo-icons demo-icons-on menu-item-active" href="#"><i class="fa fa-check"></i>Menu Icons On</a>
-                    <a class="demo-icons demo-icons-off" href="#"><i class="fa fa-times"></i>Menu Icons Off</a>
-                </div>
-                <div class="sidebar-divider"></div>
-                <div class="sidebar-separator">Menu Color</div>
-                <div class="menu-items menu-icons">
-                    <a class="demo-dark menu-item-active" href="#"><i class="fa fa-moon"></i>Sidebar Dark</a>
-                    <a class="demo-light" href="#"><i class="fa fa-sun"></i>Sidebar Light</a>
-                </div>
-                <div class="sidebar-divider"></div>
-                <div class="sidebar-separator">Header Settings</div>
-                <div class="menu-items menu-icons">
-                    <a class="demo-icons demo-header-light menu-item-active" href="#"><i class="fa fa-sun"></i>Header Light</a>
-                    <a class="demo-icons demo-header-dark" href="#"><i class="fa fa-moon"></i>Header Dark</a>
-                </div>
-                <div class="sidebar-divider"></div>
-                <div class="sidebar-separator">Footer Settings</div>
-                <div class="menu-items menu-icons">
-                    <a class="demo-icons demo-footer-dark menu-item-active" href="#"><i class="fa fa-sun"></i>Footer Dark</a>
-                    <a class="demo-icons demo-footer-light" href="#"><i class="fa fa-moon"></i>Footer Light</a>
-                </div>
-                <div class="sidebar-divider"></div>
-            </div>
-        </div>
-        <!-- selesai header -->
+        <!-- selesai header -->   
 
         
         <div class="page-content header-clear">
-            <div id="load_screen">
-                <div id="loading">loading document</div>
-                <div id="demo"></div>
-                <div class="news-home">
-                    <div class="news-tabs bg-white">
-                        <a href="#" data-tab="news-tab-1" class="one-half center-text active-tab-button">Lists</a>
-                        <a href="#" data-tab="news-tab-3" class="one-half last-column center-text">Cards</a>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="news-tabs-content">
-                        <div class="tab-item active-tab" id="news-tab-1">
-                            <div class="content">
+            <div class="news-home">
+                <div class="news-tabs bg-white">
+                    <a href="#" data-tab="news-tab-1" class="one-third center-text active-tab-button">Terbaru</a>
+                    <a href="#" data-tab="news-tab-2" class="one-third last-column center-text">Berita Pilihan</a>
+                    <a href="#" data-tab="news-tab-3" class="one-third last-column center-text">Popular</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="news-tabs-content">
+                    <div class="tab-item active-tab" id="news-tab-1">
+
+                        <!-- test -->
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+                        <div class="content">
+                            <div class="loader"></div>
+                            <ul id="myUL">
                                 <div id="mydiv"></div>
-                            </div>
+                            </ul>
                         </div>
-                        <div class="tab-item" id="news-tab-3">
-                            <div id="mydivcard"></div>
+                        <a onclick="loadmore()" class="button button-s button-center-medium bg-highlight ultrabold uppercase button-round">Load More</a>
+                    </div>
+                    <div class="tab-item" id="news-tab-2">
+                        <div class="slider slider-for">
+                            <div id="slide1"></div>
+                            <div id="slide2"></div>
+                            <div id="slide3"></div>
+                            <div id="slide4"></div>
+                            <div id="slide5"></div>
                         </div>
+                    </div>
+                    <div class="tab-item" id="news-tab-3">
+                        <div id="mydivcard"></div>
+                    </div>
+                    <div class="tab-item" id="news-tab-4">
+                        <div class="content">
+                            <div id="beritavideo"></div>
+                        </div>
+                        <a onclick="loadmore1()" class="button button-s button-center-medium bg-highlight ultrabold uppercase button-round">Load More</a>
+                    </div>
+                    <div class="tab-item" id="news-tab-5">
+                        <div class="content">
+                            <div id="beritafoto"></div>
+                        </div>
+                        <a onclick="loadmore2()" class="button button-s button-center-medium bg-highlight ultrabold uppercase button-round">Load More</a>
+                    </div>
+                    <div class="tab-item" id="news-tab-6">
                     </div>
                 </div>
             </div>
@@ -188,44 +149,43 @@
                     Banten Indonesia
                 </p>
                 <div class="footer-socials">
-                    <a href="#"><i class="facebook-bg fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="twitter-bg fab fa-twitter"></i></a>
-                    <a href="#"><i class="google-bg fab fa-google-plus-g"></i></a>
-                    <a href="#"><i class="instagram-bg fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/kabarotocom/"><i class="facebook-bg fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/kabarotocom?lang=en"><i class="twitter-bg fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/kabarotocom/"><i class="google-bg fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCdM66b1HBXAYUnGlNahg7jw"><i class="instagram-bg fab fa-youtube"></i></a>
                     <a href="#" class="back-to-top"><i class="bg-green-dark fas fa-angle-up"></i></a>
                 </div>
-                <p class="footer-copyright">KabarOto &copy;<span class="copyright-year"></span>. Develop by <a href="https://www.instagram.com/ahauwlie/?hl=de">@ahauwlie</a>.</p>
+                <p class="footer-copyright">KabarOto &copy;<span class="copyright-year"></span>. Developed by <a href="https://www.instagram.com/ahauwlie/?hl=de">@ahauwlie</a>.</p>
             </div>
             <!-- selesai disini -->
 
             <div class="navbar footer-dark">
-                <a href="home.html">
+                <a href="#" data-tab="news-tab-1" class="active-tab-button">
                     <i class="fa fa-home"></i><br>
                     Home
                 </a>
-                <a href="home1.html" class="active">
+                <a href="#" data-tab="news-tab-4" class="last-column">
                     <i class="fa fa-play-circle"></i><br>
                     Video
                 </a>
-                <a href="modif_bengbil.html">
+                <a href="#" data-tab="news-tab-5" class="last-column">
                     <i class="fa fa-camera"></i><br>
                     Foto
                 </a>
-                <a href="modif_bengtor.html">
+                <a href="#" data-tab="news-tab-6" class="last-column">
                     <i class="fa fa-th-large"></i><br>
                     Category
                 </a>
             </div>
-
         </div>
         <a href="#" class="back-to-top-badge back-to-top-small bg-highlight"><i class="fa fa-angle-up"></i>Back to Top</a>
     </div>
     <script type="text/javascript" src="../scripts/jquery.js"></script>
     <script type="text/javascript" src="../scripts/plugins.js"></script>
     <script type="text/javascript" src="../scripts/custom.js"></script>
+    <!-- terbaru -->
     <script type="text/javascript">
-        $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
-                
+        $.getJSON('https://adm982.kabaroto.com/api/post/?rpp=99', function(data) {       
             for (var i = 0; i < data.data.length; i++) {
                 var my = data.data[i].cover,
                 replacement = '_160x160.';
@@ -246,6 +206,7 @@
                 var minides = data.data[i].seo_description;
 
                 var table1 = `
+                <li>
                     <div class="news-list-item no-border bottom-0">
                         <a href="nyoba_detail.html?id=`+category+`">
                             <img src="` + cover + `">
@@ -253,9 +214,58 @@
                         </a>
                         <span><i class="fas fa-clock"></i>` + date + `<a href="userposts.html?id=`+userid+`" class="color-highlight">` + user + `</a></span>
                     </div>
+                </li>
                 `;
 
                 $("#mydiv").append(table1);
+            }
+            $(".loader").hide();
+        });
+    </script>
+    <!-- test -->
+    <script type="text/javascript">
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+
+            
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("strong")[0];
+                console.log(a);
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    <!-- terpopuler -->
+    <script type="text/javascript">
+        $.getJSON('https://adm982.kabaroto.com/api/post?category=14/?page=1&rpp=20', function(data) {
+                
+            for (var i = 0; i < data.data.length; i++) {
+                var my = data.data[i].cover,
+                replacement = '_160x160.';
+                var str = my.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[i].coverlite = str;
+                var my1 = data.data[i].cover,
+                replacement = '_318x150.';
+                var str1 = my1.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[i].coverlite1 = str1;
+
+                var category = data.data[i].id;
+                var cover = data.data[i].coverlite;
+                var covercard = data.data[i].coverlite1;
+                var date = data.data[i].published;
+                var title = data.data[i].title;
+                var user = data.data[i].user.name;
+                var userid = data.data[i].user.id;
+                var minides = data.data[i].seo_description;
 
                 var table2 = `
                     <div class="article-card  box-shadow bg-white bottom-30">
@@ -277,46 +287,13 @@
             }
         });
     </script>
-    <script type="text/javascript">
-        $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
-                
-            $('#demo').html('<div class="single-slidera owl-carousel owl-no-dots" id="test"></div>');
-            for(var i=0;i<5;i++){
-                var my2 = data.data[i].cover, replacement = '_360x240.';
-                var str2 = my2.replace(/.([^.]*)$/, replacement + '$1');
-                data.data[i].coverlite2 = str2;
-
-                var coverc = data.data[i].coverlite2;
-                var category = data.data[i].id;
-                var title = data.data[i].title;
-                var boom =`
-                    <a href="nyoba_detail.html?id=`+category+`" class="news-slide-1">
-                        <img src="`+coverc+`" data-src-retina="`+coverc+`" alt="">
-                        <strong class="font-16">`+title+`</strong>
-                        <em class="bg-highlight">`+category+`</em>
-                        <i class="fa fa-angle-right"></i>
-                        <span class="overlay overlay-gradient"></span>
-                    </a>
-                `;
-                $(".owl-carousel").append(boom);
-            };
-            $('.single-slidera').owlCarousel({
-                loop: true,
-                nav: false,
-                lazyLoad: true,
-                items: 1,
-                autoplay: true,
-                autoplayTimeout: 3500
-            });
-        });
-    </script>
+    <!-- terbaru loadmore -->
     <script type="text/javascript">
         var page = 1;
-        $(window).scroll(function () {
-            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-                appendData();
-            }
-        });
+        function loadmore() {
+            appendData();
+        }
+
         function appendData() {
             page++;
             console.log(page);
@@ -342,6 +319,7 @@
 
                     // buat UI yang di tampilin ke html
                     var table1 = `
+                        <div class="loader2"></div>
                         <div class="news-list-item no-border bottom-0">
                             <a href="nyoba_detail.html?id=`+category+`">
                                 <img src="` + cover + `">
@@ -353,28 +331,121 @@
 
                     //panggil ke <div id="mydiv">
                     $("#mydiv").append(table1);
-
-                    var table2 = `
-                        <div class="article-card  box-shadow bg-white bottom-30">
-                            <a href="nyoba_detail.html?id=`+category+`" class="article-header">
-                                <span class="article-overlay"></span>
-                                <img class="article-image preload-image" src="` + covercard + `">
-                                <span class="article-category bg-highlight color-white uppercase">` + category + `</span>
-                                <span class="article-author color-gray-light"><i class="fa fa-user opacity-50"></i>`+user+`</span>
-                                <span class="article-time color-gray-light">` + date + `<i class="fas fa-clock opacity-50"></i></span>
-                            </a>
-                            <div class="article-content">
-                                <h1 class="article-title top-15 bottom-15">` + title + `</h1>
-                                <p class="bottom-15">` + minides + `</p>
-                            </div>
-                        </div>
-                    `;
-
-                    //panggil ke <div id="mydiv">
-                    $("#mydivcard").append(table2);
                 };
+                $(".loader2").hide();
             });
         }
+    </script>
+    <script type="text/javascript" src="../scripts/beritavideo.js"></script>
+    <script type="text/javascript" src="../scripts/beritafoto.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js'></script>
+    <script type="text/javascript">
+         $('.slider-for').slick({
+           slidesToShow: 1,
+           slidesToScroll: 1,
+           arrows: false,
+           fade: true,
+           asNavFor: '.slider-nav'
+         });
+    </script>
+    <script type="text/javascript">
+        $.getJSON('https://adm982.kabaroto.com/api/post/?page=1&rpp=20', function(data) {
+
+                var test1 = data.data[0].cover, replacement = '_360x485.';
+                var string1 = test1.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[0].cvr1 = string1;
+
+                var coverslide = data.data[0].cvr1;
+                var id = data.data[0].id;
+                var title = data.data[0].title;
+                var uhuy =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id+`" class="news-slide-1">
+                            <img src="`+coverslide+`" data-src-retina="`+coverslide+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title+`</h1>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide1').append(uhuy);
+
+                var test2 = data.data[1].cover, replacement = '_360x485.';
+                var string2 = test2.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[1].cvr2 = string2;
+
+                var coverslide1 = data.data[1].cvr2;
+                var id1 = data.data[1].id;
+                var title1 = data.data[1].title;
+                var uhuy1 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id1+`" class="news-slide-1">
+                            <img src="`+coverslide1+`" data-src-retina="`+coverslide1+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title1+`</h1>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide2').append(uhuy1);
+
+                var test3 = data.data[2].cover, replacement = '_360x485.';
+                var string3 = test3.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[2].cvr3 = string3;
+
+                var coverslide2 = data.data[2].cvr3;
+                var id2 = data.data[2].id;
+                var title2 = data.data[2].title;
+                var uhuy2 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id2+`" class="news-slide-1">
+                            <img src="`+coverslide2+`" data-src-retina="`+coverslide2+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title2+`</h1>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide3').append(uhuy2);
+
+                var test4 = data.data[3].cover, replacement = '_360x485.';
+                var string4 = test4.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[3].cvr4 = string4;
+
+                var coverslide3 = data.data[3].cvr4;
+                var id3 = data.data[3].id;
+                var title3 = data.data[3].title;
+                var uhuy3 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id3+`" class="news-slide-1">
+                            <img src="`+coverslide3+`" data-src-retina="`+coverslide3+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title3+`</h1>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide4').append(uhuy3);
+
+                var test5 = data.data[4].cover, replacement = '_360x485.';
+                var string5 = test5.replace(/.([^.]*)$/, replacement + '$1');
+                data.data[4].cvr5 = string5;
+
+                var coverslide4 = data.data[4].cvr5;
+                var id4 = data.data[4].id;
+                var title4 = data.data[4].title;
+                var uhuy4 =`
+                    <div>
+                        <a href="nyoba_detail.html?id=`+id4+`" class="news-slide-1">
+                            <img src="`+coverslide4+`" data-src-retina="`+coverslide4+`" alt="">
+                            <div class="cover-content cover-content-bottom">
+                                <h1 class="color-white left-text uppercase bold top-30 bg-highlight">`+title4+`</h1>
+                            </div>
+                        </a>
+                    </div>
+                `;
+                $('#slide5').append(uhuy4);
+        });
     </script>
 </body>
 </html>
