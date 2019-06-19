@@ -62,13 +62,10 @@
             }
 
             #myUL li{
-              border: 1px solid #ddd;
-              margin-top: -1px; /* Prevent double borders */
-              background-color: #f6f6f6;
+              margin-top: -1px;
               padding: 12px;
               text-decoration: none;
               font-size: 18px;
-              color: black;
               display: block
             }
 
@@ -185,7 +182,7 @@
     <script type="text/javascript" src="../scripts/custom.js"></script>
     <!-- terbaru -->
     <script type="text/javascript">
-        $.getJSON('https://adm982.kabaroto.com/api/post/?rpp=99', function(data) {       
+        $.getJSON('https://adm982.kabaroto.com/api/post', function(data) {       
             for (var i = 0; i < data.data.length; i++) {
                 var my = data.data[i].cover,
                 replacement = '_160x160.';
